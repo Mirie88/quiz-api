@@ -13,7 +13,9 @@ class ResponsesController extends Controller
      */
     public function index()
     {
-        return Responses::with([ 'user', 'quiz', 'question'])->get();
+        return response()->json([
+            Responses::with([ 'user', 'quiz', 'question'])->get(),
+        ]);
     }
 
     /**
